@@ -1,4 +1,3 @@
-
 db.books.insertMany([
   {
     title: "Petals of Blood",
