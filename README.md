@@ -14,6 +14,7 @@ This project sets up a MongoDB database for a bookstore using Kenyan literature.
  Using MongoDB Shell:
 bash
 load("insert_books.js")
+
 📄 Files Included
 insert_books.js: Inserts 10+ Kenyan-themed book documents
 
