@@ -1,47 +1,44 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19952325&assignment_repo_type=AssignmentRepo)
-# MongoDB Fundamentals Assignment
+# 📚 PLP Bookstore MongoDB Project
 
-This assignment focuses on learning MongoDB fundamentals including setup, CRUD operations, advanced queries, aggregation pipelines, and indexing.
+This project sets up a MongoDB database for a bookstore using Kenyan literature. It demonstrates MongoDB fundamentals including data insertion, CRUD operations, advanced querying, aggregation, indexing, and performance analysis.
 
-## Assignment Overview
+📁 Database Info:
+- Database name: `plp_bookstore`
+- Collection name: `books`
 
-You will:
-1. Set up a MongoDB database
-2. Perform basic CRUD operations
-3. Write advanced queries with filtering, projection, and sorting
-4. Create aggregation pipelines for data analysis
-5. Implement indexing for performance optimization
+🔧 Tools Used:
+- MongoDB Atlas (Free Tier)
 
-## Getting Started
+ 💻 How to Run
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+ Using MongoDB Shell:
+bash
+load("insert_books.js")
+📄 Files Included
+insert_books.js: Inserts 10+ Kenyan-themed book documents
 
-## Files Included
+queries.js: All MongoDB queries (CRUD, advanced queries, aggregation, indexing)
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+README.md: Project setup and usage instructions
 
-## Requirements
+screenshot.png: Screenshot of MongoDB Compass or Atlas showing the bookstore collection
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+✅ Features Covered
+✅ Basic CRUD (insert, find, update, delete)
 
-## Submission
+✅ Advanced Queries (filtering, projection, sort, pagination)
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+✅ Aggregation Pipelines (group, avg, count)
 
-1. Complete all tasks in the assignment
-2. Add your `queries.js` file with all required MongoDB queries
-3. Include a screenshot of your MongoDB database
-4. Update the README.md with your specific setup instructions
+✅ Indexing and performance analysis using .explain()
 
-## Resources
+🧪 How to Test
+Run any query from queries.js in your preferred MongoDB tool
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+Use Compass to visualize documents
+
+View performance stats using .explain("executionStats")
+
+
+
+
