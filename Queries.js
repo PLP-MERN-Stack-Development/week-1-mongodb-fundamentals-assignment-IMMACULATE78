@@ -82,6 +82,18 @@ db.books.aggregate([
   { $sort: { _id: 1 } }
 ]);
 
+//  INDEXING
+
+// 15. Create an index on the 'title' field
+db.books.createIndex({ title: 1 });
+
+// 16. Create a compound index on 'author' and 'published_year'
+db.books.createIndex({ author: 1, published_year: -1 });
+
+// 17. Use explain() to check performance of a query using the index
+db.books.find({ title: "Petals of Blood" }).explain("executionStats");
+
+
 
 
 
