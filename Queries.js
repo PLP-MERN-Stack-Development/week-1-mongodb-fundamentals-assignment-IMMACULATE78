@@ -13,7 +13,10 @@ db.books.updateOne(
   { $set: { price: 1400 } }
 );
 
-// --- ADVANCED QUERIES ---
+// 5. Delete a book by its title (e.g., "Son of Woman")
+db.books.deleteOne({ title: "Son of Woman" });
+
+//  ADVANCED QUERIES 
 
 // 6. Find books that are in stock and published after 2010
 db.books.find({
@@ -39,6 +42,46 @@ db.books.find().limit(5).skip(0);
 // 11. Pagination - Page 2: next 5 books
 db.books.find().limit(5).skip(5);
 
+// AGGREGATION PIPELINES 
 
-// 5. Delete a book by its title (e.g., "Son of Woman")
-db.books.deleteOne({ title: "Son of Woman" });
+// 12. Calculate the average price of books by genre
+db.books.aggregate([
+  {
+    $group: {
+      _id: "$genre",
+      averagePrice: { $avg: "$price" }
+    }
+  }
+]);
+
+// 13. Find the author with the most books in the collection
+db.books.aggregate([
+  {
+    $group: {
+      _id: "$author",
+      count: { $sum: 1 }
+    }
+  },
+  { $sort: { count: -1 } },
+  { $limit: 1 }
+]);
+
+// 14. Group books by publication decade and count them
+db.books.aggregate([
+  {
+    $group: {
+      _id: {
+        $concat: [
+          { $toString: { $multiply: [{ $floor: { $divide: ["$published_year", 10] } }, 10] } },
+          "s"
+        ]
+      },
+      totalBooks: { $sum: 1 }
+    }
+  },
+  { $sort: { _id: 1 } }
+]);
+
+
+
+
